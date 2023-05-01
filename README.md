@@ -10,6 +10,14 @@ Temperature in degrees C = (TEMP_OUT Register Value as a signed quantity)/340 + 
 
 7-bit I2C Address.
 
-0th and 7th bit is hard-coded to '0'
+0th and 7th bit is hard-coded to '0'.
 
-Default I2C Address is 0x68.
+Default I2C Address is `0x68`.
+
+## Timing diagram
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/49667585/235472126-750ab4fa-c173-48b5-a74e-d0ab1b58320e.png">
+<img width="618" alt="image" src="https://user-images.githubusercontent.com/49667585/235472206-4fe726a7-7d4e-477b-962f-efc23615dde4.png">
+
+When ACK or Data bits come from slave, master releases SDA line means High Impedance state (Z)
+
