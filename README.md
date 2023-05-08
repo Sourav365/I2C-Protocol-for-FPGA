@@ -2,6 +2,8 @@
 
 ## I2C Slave-> MPU6050
 
+Max I2C clock frequency = 400KHz
+
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/49667585/235461192-df514af8-a123-4b06-8e61-0ad830e3afb2.png">
 
 ```
