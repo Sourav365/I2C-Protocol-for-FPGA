@@ -22,6 +22,15 @@ Default I2C Address is `0x68`.
 <img width="618" alt="image" src="https://user-images.githubusercontent.com/49667585/235472206-4fe726a7-7d4e-477b-962f-efc23615dde4.png">
 
 When ACK or Data bits come from slave, master releases SDA line means High Impedance state (Z)
+```
+Let's take SCL frequency = 10KHz. T = 100 u-sec
+For proper operation (Start condition during High state of clk, data change during low state of clk...),
+Let's take operating clk frequency = 20*10KHz = 200KHz. T = 5 u-sec
+
+I2C addr = 0x68
+I2C addr with R/W bit = (0x68<<1)+1 = 0xD1
+
+```
 
 ## State Diagram
 
