@@ -42,19 +42,19 @@ I2C addr with R/W bit = (0x68<<1)+1 = 0xD1
 
 1. Start condition (SCL high, SDA data changesfrom 1 to 0)
 
-<img width="873" alt="image" src="https://user-images.githubusercontent.com/49667585/237016840-5861b8f8-1b07-49b3-961b-ac48313687e4.png">
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237016840-5861b8f8-1b07-49b3-961b-ac48313687e4.png">
 
 2. Send Address bits and RW (SCL low, SDA data changes, checked at posedge)
 
-<img width="926" alt="image" src="https://user-images.githubusercontent.com/49667585/237019542-d656768e-71c1-4d44-b493-894f86ecfb7b.png">
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237019542-d656768e-71c1-4d44-b493-894f86ecfb7b.png">
 
 3. Receive ACk from sensor and data bits and Master sends ACK for more data to receive
 
-<img width="694" alt="image" src="https://user-images.githubusercontent.com/49667585/237020210-bcbe582e-44c9-43c5-b994-53fc845498cd.png">
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237020210-bcbe582e-44c9-43c5-b994-53fc845498cd.png">
 
 4. Slave sends more data and master sends NAC not to receive anymore data
 
-<img width="776" alt="image" src="https://user-images.githubusercontent.com/49667585/237021587-b82ec741-6a9f-4dcb-832d-ba5c1c659f3c.png">
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237021587-b82ec741-6a9f-4dcb-832d-ba5c1c659f3c.png">
 
 5. Send STOP signal by Master (SCL high, SDA data changesfrom 0 to 1)
 
@@ -62,4 +62,4 @@ I2C addr with R/W bit = (0x68<<1)+1 = 0xD1
 
 6. Repeated start bit
 
-<img width="614" alt="image" src="https://user-images.githubusercontent.com/49667585/237024530-fbdfb100-1f21-448b-810f-94e44d5ae3c3.png">
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237024530-fbdfb100-1f21-448b-810f-94e44d5ae3c3.png">
