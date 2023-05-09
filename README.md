@@ -50,11 +50,11 @@ I2C addr with R/W bit = (0x68<<1)+1 = 0xD1
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237019542-d656768e-71c1-4d44-b493-894f86ecfb7b.png">
 
-3. Receive ACk from sensor and data bits and Master sends ACK for more data to receive
+3. Receive ACk from sensor and data bits and Master sends ACK for more data to receive (ACK->0 for 1 entire scl period)
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237020210-bcbe582e-44c9-43c5-b994-53fc845498cd.png">
 
-4. Slave sends more data and master sends NAC not to receive anymore data
+4. Slave sends more data and master sends NACK not to receive anymore data (NACK->1 for 1 entire scl period)
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237021587-b82ec741-6a9f-4dcb-832d-ba5c1c659f3c.png">
 
