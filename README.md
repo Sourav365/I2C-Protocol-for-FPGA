@@ -1,5 +1,7 @@
 # I2C-Protocol-On-Basys3
 
+Inter-Integrated Circuit (I2C), I^2 C, or even IIC, is a **two-wire** data transfer bus. Philips Semiconductor (now **NXP** Semiconductors) invented the protocol in 1982.
+
 ## I2C Slave-> MPU6050
 
 Max I2C clock frequency = 400KHz
