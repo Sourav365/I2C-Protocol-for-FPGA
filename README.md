@@ -36,3 +36,6 @@ I2C addr with R/W bit = (0x68<<1)+1 = 0xD1
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/235473554-a9696eb7-2ebb-463d-b10c-97d63a97dc31.png">
 
+## Output Waveform
+
+<img width="741" alt="image" src="https://user-images.githubusercontent.com/49667585/237013027-6be3d998-a136-4567-992e-be8c90e5398a.png">
