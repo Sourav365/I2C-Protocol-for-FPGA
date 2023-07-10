@@ -65,3 +65,9 @@ I2C addr with R/W bit = (0x68<<1)+1 = 0xD1
 6. Repeated start bit
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237024530-fbdfb100-1f21-448b-810f-94e44d5ae3c3.png">
+
+
+## But in most of the sensor, they use following format
+Start --> Send Slave Addr --> Send Slave Internal Reg Addr --> Receive Data --> Stop.
+
+![image](https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/a84a8405-47d0-4318-ada4-bdd2dc76f4cb)
