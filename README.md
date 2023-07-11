@@ -71,3 +71,8 @@ I2C addr with R/W bit = (0x68<<1)+1 = 0xD1
 Start --> Send Slave Addr --> Send Slave Internal Reg Addr --> Receive Data --> Stop.
 
 ![image](https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/a84a8405-47d0-4318-ada4-bdd2dc76f4cb)
+
+
+<img width="871" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/e4232fde-d296-474f-bef2-31eaadab2876">
+
+
