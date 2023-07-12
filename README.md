@@ -90,8 +90,8 @@ Start --> Send Slave Addr --> Send Slave Internal Reg Addr --> Receive Data --> 
 ```mermaid
 graph TD;
     START1-->SEND1_ADDR6-->Send1_Addr... -->SEND1_ADDR0-->SEND_W-->REC1_ACK;
-    REC1_ACK-->SEND_DATA7-->Snd_Data... -->SEND_DATA0-->REC2_ACK;
-    REC2_ACK-->START2-->SEND2_ADDR6-->Send2_Addr... -->SEND2_ADDR0-->SEND_R-->REC3_ACK;
+    REC1_ACK -->SEND_DATA7-->Snd_Data... -->SEND_DATA0-->REC2_ACK;
+    REC2_ACK -->START2-->SEND2_ADDR6-->Send2_Addr... -->SEND2_ADDR0-->SEND_R-->REC3_ACK;
     REC3_ACK-->REC_DATA7-->Receive... -->REC_DATA0-->SEND_NAK-->WAIT-->START1;
 ```
 
