@@ -86,8 +86,19 @@ Start --> Send Slave Addr --> Send Slave Internal Reg Addr --> Receive Data --> 
 
 ![image](https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/a84a8405-47d0-4318-ada4-bdd2dc76f4cb)
 
+### States
+```mermaid
+graph TD;
+    START1-->SEND1_ADDR6-->Send1_Addr... -->SEND1_ADDR0-->SEND_W-->REC1_ACK;
+    REC1_ACK-->SEND_DATA7-->Snd_Data... -->SEND_DATA0-->REC2_ACK;
+    REC2_ACK-->START2-->SEND2_ADDR6-->Send2_Addr... -->SEND2_ADDR0-->SEND_R-->REC3_ACK;
+    REC3_ACK-->REC_DATA7-->Receive... -->REC_DATA0-->SEND_NAK-->WAIT-->START1;
+```
 
 
+                   
+                     
+                  
 
 ### Using Arduino and MPU6050
 <img width="891" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/99070a12-b64d-46e2-9e14-4d5341c209d2">
