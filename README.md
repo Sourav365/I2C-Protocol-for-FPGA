@@ -80,6 +80,7 @@ Start --> Send Slave Addr --> Send Slave Internal Reg Addr --> Receive Data --> 
 <img width="802" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/26c559a7-e129-43e0-a3a6-c8b95b5ab66e">
 
 
-<img width="330" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/f73901fa-df62-426d-b63c-adcfc7149ee6">
+<img width="900" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/f73901fa-df62-426d-b63c-adcfc7149ee6">
 
+<img width="900" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/db60678e-24c1-43f7-83b1-15912594f73d">
 
