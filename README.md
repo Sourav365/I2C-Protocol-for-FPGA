@@ -76,6 +76,8 @@ When ACK or Data bits come from slave, master releases SDA line means High Imped
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237024530-fbdfb100-1f21-448b-810f-94e44d5ae3c3.png">
 
+<img width="902" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/f8bccaaa-b0a3-4447-abf2-125e006426a3">
+
 
 ## Code 2 (Receive data from internal Reg of Slave)
 
