@@ -61,13 +61,13 @@ module i2c_master_rd_slave_reg (
     parameter SLAVE_ADDR = 7'b110_1000; //0x68
     parameter SLAVE_ADDR_PLUS_R = 8'b1101_0001; //Slave address (7-bits) + Read  bit = (0x68 << 1) + 1 = 0xD1
     parameter SLAVE_ADDR_PLUS_W = 8'b1101_0000; //Slave address (7-bits) + Write bit = (0x68 << 1) + 0 = 0xD0
-    parameter SLAVE_INT_REG_ADDR = 8'b0011_1100; //0x3C   or 0x42
+    parameter SLAVE_INT_REG_ADDR = 8'h1B; //8'b0100_0010;//0x42
 
     //reg [7:0] data_MSB      = 8'b0;             //data bits
     reg [7:0] data            = 8'b0;             //data bits
     reg output_bit            = 1'b1;             //output bit of sda data pulled up, so initially 1
     wire input_bit;                               //input bit from slave
-    reg [15:0] count1         = 16'b1;            //counter for synchronize state machine (ticks)
+    reg [15:0] count1         = 16'b0;            //counter for synchronize state machine (ticks)
     
     //Local parameters for states
     localparam [5:0] POWER_UP    = 0,
@@ -123,7 +123,7 @@ module i2c_master_rd_slave_reg (
     
         if(rst) begin
             state  <= POWER_UP;
-            count1 <= 1;
+            count1 <= 0;
         end
         
         else begin
@@ -131,201 +131,201 @@ module i2c_master_rd_slave_reg (
             
             case (state)
             
-                POWER_UP: if(count1==2000) state <= START1; //2000*5u-Sec = 10m-Sec after go to start
+                POWER_UP: if(count1==1999) state <= START1; //2000*5u-Sec = 10m-Sec after go to start
                 
                 
                 /***************** Start + Send SlaveAddr + Write + Receive ACK from Slave ******************/
                 START1     : begin
-                    if(count1==2005) output_bit <= 0;      //At 5th tick, SCL line is high, make SDA=0 for start
-                    if(count1==2015) state <= SEND1_ADDR6;  //At 14th tick, SCL line is low, start sending addr (Setup time)
+                    if(count1==2004) output_bit <= 0;      //At 5th tick, SCL line is high, make SDA=0 for start
+                    if(count1==2013) state <= SEND1_ADDR6;  //At 14th tick, SCL line is low, start sending addr (Setup time)
                 end
                 
                 SEND1_ADDR6: begin
                     output_bit <= SLAVE_ADDR[6];
-                    if(count1==2035) state <= SEND1_ADDR5;  //1 SCL period has 20 ticks.
+                    if(count1==2033) state <= SEND1_ADDR5;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_ADDR5: begin
                     output_bit <= SLAVE_ADDR[5];
-                    if(count1==2055) state <= SEND1_ADDR4;  //1 SCL period has 20 ticks.
+                    if(count1==2053) state <= SEND1_ADDR4;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_ADDR4: begin
                     output_bit <= SLAVE_ADDR[4];
-                    if(count1==2075) state <= SEND1_ADDR3;  //1 SCL period has 20 ticks.
+                    if(count1==2073) state <= SEND1_ADDR3;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_ADDR3: begin
                     output_bit <= SLAVE_ADDR[3];
-                    if(count1==2095) state <= SEND1_ADDR2;  //1 SCL period has 20 ticks.
+                    if(count1==2093) state <= SEND1_ADDR2;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_ADDR2: begin
                     output_bit <= SLAVE_ADDR[2];
-                    if(count1==2115) state <= SEND1_ADDR1;  //1 SCL period has 20 ticks.
+                    if(count1==2113) state <= SEND1_ADDR1;  //1 SCL period has 20 ticks.
                 end
                
                 SEND1_ADDR1: begin
                     output_bit <= SLAVE_ADDR[1];
-                    if(count1==2135) state <= SEND1_ADDR0;  //1 SCL period has 20 ticks.
+                    if(count1==2133) state <= SEND1_ADDR0;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_ADDR0: begin
                     output_bit <= SLAVE_ADDR[0];
-                    if(count1==2155) state <= SEND1_W;  //1 SCL period has 20 ticks.
+                    if(count1==2153) state <= SEND1_W;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_W   : begin
                     output_bit <= 1'b0; // For Write send 0
-                    if(count1==2170) state <= REC1_ACK;  //When clk changes/at the edge of clk, change it.
+                    if(count1==2169) state <= REC1_ACK;  //When clk changes/at the edge of clk, change it.
                 end
                 
-                REC1_ACK   : if(count1==2195) state <= SEND1_DATA7;
+                REC1_ACK   : if(count1==2189) state <= SEND1_DATA7; //2193
                 
                 
                 
                 /***************** Send Slave Internal Reg Addr + Receive ACK from Slave ******************/
                 SEND1_DATA7: begin
                     output_bit <= SLAVE_INT_REG_ADDR[7];
-                    if(count1==2215) state <= SEND1_DATA6;  //1 SCL period has 20 ticks.
+                    if(count1==2213) state <= SEND1_DATA6;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_DATA6: begin
                     output_bit <= SLAVE_INT_REG_ADDR[6];
-                    if(count1==2235) state <= SEND1_DATA5;  //1 SCL period has 20 ticks.
+                    if(count1==2233) state <= SEND1_DATA5;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_DATA5: begin
                     output_bit <= SLAVE_INT_REG_ADDR[5];
-                    if(count1==2255) state <= SEND1_DATA4;  //1 SCL period has 20 ticks.
+                    if(count1==2253) state <= SEND1_DATA4;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_DATA4: begin
                     output_bit <= SLAVE_INT_REG_ADDR[4];
-                    if(count1==2275) state <= SEND1_DATA3;  //1 SCL period has 20 ticks.
+                    if(count1==2273) state <= SEND1_DATA3;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_DATA3: begin
                     output_bit <= SLAVE_INT_REG_ADDR[3];
-                    if(count1==2295) state <= SEND1_DATA2;  //1 SCL period has 20 ticks.
+                    if(count1==2293) state <= SEND1_DATA2;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_DATA2: begin
                     output_bit <= SLAVE_INT_REG_ADDR[2];
-                    if(count1==2315) state <= SEND1_DATA1;  //1 SCL period has 20 ticks.
+                    if(count1==2313) state <= SEND1_DATA1;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_DATA1: begin
                     output_bit <= SLAVE_INT_REG_ADDR[1];
-                    if(count1==2335) state <= SEND1_DATA0;  //1 SCL period has 20 ticks.
+                    if(count1==2333) state <= SEND1_DATA0;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND1_DATA0: begin
                     output_bit <= SLAVE_INT_REG_ADDR[0];
-                    if(count1==2350) state <= REC2_ACK;  //1 SCL period has 20 ticks.
+                    if(count1==2349) state <= REC2_ACK;  //1 SCL period has 20 ticks.
                 end
                 
-                REC2_ACK   : if(count1==2370) state <= START2; /// If not work change to 75.
+                REC2_ACK   : if(count1==2369) state <= START2; /// If not work change to 75.
                 
                 
                 
                 
                 /***************** Start + Send SlaveAddr + Read + Receive ACK from Slave ******************/
                 START2     : begin
-                    if(count1==2375) output_bit <= 1;
-                    if(count1==2385) output_bit <= 0;      //At 5th tick, SCL line is high, make SDA=0 for start
-                    if(count1==2395) state <= SEND2_ADDR6;  //At 14th tick, SCL line is low, start sending addr (Setup time)
+                    if(count1==2373) output_bit <= 1;
+                    if(count1==2384) output_bit <= 0;      //At 5th tick, SCL line is high, make SDA=0 for start
+                    if(count1==2393) state <= SEND2_ADDR6;  //At 14th tick, SCL line is low, start sending addr (Setup time)
                 end
                 
                 SEND2_ADDR6: begin
                     output_bit <= SLAVE_ADDR[6];
-                    if(count1==2415) state <= SEND2_ADDR5;  //1 SCL period has 20 ticks.
+                    if(count1==2413) state <= SEND2_ADDR5;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND2_ADDR5: begin
                     output_bit <= SLAVE_ADDR[5];
-                    if(count1==2435) state <= SEND2_ADDR4;  //1 SCL period has 20 ticks.
+                    if(count1==2433) state <= SEND2_ADDR4;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND2_ADDR4: begin
                     output_bit <= SLAVE_ADDR[4];
-                    if(count1==2455) state <= SEND2_ADDR3;  //1 SCL period has 20 ticks.
+                    if(count1==2453) state <= SEND2_ADDR3;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND2_ADDR3: begin
                     output_bit <= SLAVE_ADDR[3];
-                    if(count1==2475) state <= SEND2_ADDR2;  //1 SCL period has 20 ticks.
+                    if(count1==2473) state <= SEND2_ADDR2;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND2_ADDR2: begin
                     output_bit <= SLAVE_ADDR[2];
-                    if(count1==2495) state <= SEND2_ADDR1;  //1 SCL period has 20 ticks.
+                    if(count1==2493) state <= SEND2_ADDR1;  //1 SCL period has 20 ticks.
                 end
                
                 SEND2_ADDR1: begin
                     output_bit <= SLAVE_ADDR[1];
-                    if(count1==2515) state <= SEND2_ADDR0;  //1 SCL period has 20 ticks.
+                    if(count1==2513) state <= SEND2_ADDR0;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND2_ADDR0: begin
                     output_bit <= SLAVE_ADDR[0];
-                    if(count1==2535) state <= SEND2_R;  //1 SCL period has 20 ticks.
+                    if(count1==2533) state <= SEND2_R;  //1 SCL period has 20 ticks.
                 end
                 
                 SEND2_R   : begin
                     output_bit <= 1'b1; // For Read send 1
-                    if(count1==2550) state <= REC3_ACK;  //When clk changes/at the edge of clk, change it.
+                    if(count1==2549) state <= REC3_ACK;  //When clk changes/at the edge of clk, change it.
                 end
                 
-                REC3_ACK   : if(count1==2570) state <= REC1_DATA7;
+                REC3_ACK   : if(count1==2569) state <= REC1_DATA7;
                 
                 
                 
                 /***************** Receive Data from slave + Send NACK to Slave ******************/
                 REC1_DATA7  : begin
                     data[7] <= input_bit;               
-                    if(count1==2590) state <= REC1_DATA6;
+                    if(count1==2589) state <= REC1_DATA6;
                 end
                 
                 REC1_DATA6  : begin
                     data[6] <= input_bit;               
-                    if(count1==2610) state <= REC1_DATA5;
+                    if(count1==2609) state <= REC1_DATA5;
                 end
                 
                 REC1_DATA5  : begin
                     data[5] <= input_bit;               
-                    if(count1==2630) state <= REC1_DATA4;
+                    if(count1==2629) state <= REC1_DATA4;
                 end
                 
                 REC1_DATA4  : begin
                     data[4] <= input_bit;               
-                    if(count1==2650) state <= REC1_DATA3;
+                    if(count1==2649) state <= REC1_DATA3;
                 end
                 
                 REC1_DATA3  : begin
                     data[3] <= input_bit;               
-                    if(count1==2670) state <= REC1_DATA2;
+                    if(count1==2669) state <= REC1_DATA2;
                 end
                 
                 REC1_DATA2  : begin
                     data[2] <= input_bit;               
-                    if(count1==2690) state <= REC1_DATA1;
+                    if(count1==2689) state <= REC1_DATA1;
                 end
                 
                 REC1_DATA1  : begin
                     data[1] <= input_bit;               
-                    if(count1==2710) state <= REC1_DATA0;
+                    if(count1==2709) state <= REC1_DATA0;
                 end
                 
                 REC1_DATA0  : begin
                     output_bit <= 1; //Send ack
                     data[0] <= input_bit;               
-                    if(count1==2730) state <= SEND1_NAK;
+                    if(count1==2729) state <= SEND1_NAK;
                 end
                 
                 
                 SEND1_NAK  : begin
-                    if(count1==3500) begin     //Again 5 clk at start.... Repeated start with no delay(count1==2760) or add more delay....
+                    if(count1==2759) begin     //Again 5 clk at start.... Repeated start with no delay(count1==2760) or add more delay....
                         count1 <= 2000;
                         state <= START1;
                     end
@@ -354,5 +354,5 @@ module i2c_master_rd_slave_reg (
     assign input_bit = sda; 
     
     //Final output
-    assign data_out = data;///340 + 36.53;
+    assign data_out = data;
 endmodule
