@@ -125,3 +125,6 @@ graph TD;
 
 
 ### Using FPGA Board and MPU6050
+
+<img width="904" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/0aef678c-c2ed-4e2a-99f4-79cc35de9ed0">
+
