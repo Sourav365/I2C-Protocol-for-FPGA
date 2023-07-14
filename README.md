@@ -135,3 +135,7 @@ graph TD;
 <img width="906" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/843f8799-8ea0-48ed-9b98-4e118709a769">
 <img width="905" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/5f858ffc-95ec-4ee3-99a7-c8bf78bf3c08">
 
+
+
+<img width="911" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/74934972-745d-4f3d-b6d7-7c024d9b67ec">
+
