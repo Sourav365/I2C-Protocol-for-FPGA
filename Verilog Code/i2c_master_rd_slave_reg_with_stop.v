@@ -328,8 +328,11 @@ module i2c_master_rd_slave_reg_with_stop (
                 
                 SEND1_NAK  : begin
                     if(count1==2779) begin     //Again 5 clk at start.... Repeated start with no delay(count1==2760) or add more delay....
-                        count1 <= 2400; //To go to Start2
+                        /*count1 <= 2400; //To go to Start2
                         state <= START2;       // Repeated Start and Receive Data
+                        */
+                        count1 <= 2000; //To go to Start1
+                        state <= START1;       // Restart everything
                     end
                 end
                 
