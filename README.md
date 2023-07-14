@@ -136,7 +136,7 @@ graph TD;
 <img width="905" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/5f858ffc-95ec-4ee3-99a7-c8bf78bf3c08">
 
 
-Output with Start->Send Addr+Wr->Send Internal Reg Addr->Stop->Start->Send Addr+Rd->Read Data->end Addr+Rd->end Addr+Rd->...
+**Output of Start1->Send Addr+Wr->Send Internal Reg Addr->Stop->Start2->Send Addr+Rd->Read Data->NAK->Start2**
 
 <img width="906" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/6910702d-bd4f-48ea-b4ec-a80f9feebfb1">
 <img width="899" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/3731cdae-8981-4c44-a32a-2d8006b03182">
@@ -146,3 +146,10 @@ Output with Start->Send Addr+Wr->Send Internal Reg Addr->Stop->Start->Send Addr+
 Sometimes it's giving ```0x00``` values. This may be due to Reading data at a very high speed, or the sensor is not able to store its sense data to its internal reg.
 
 <img width="908" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/9979dbbe-4d78-4ef1-8186-02cfbbabaff4">
+
+**Output of Start1->Send Addr+Wr->Send Internal Reg Addr->Stop->Start2->Send Addr+Rd->Read Data->NAK->Start1**
+
+<img width="896" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/e9ecbebd-4a37-45a5-8cab-537b26e52ea7">
+
+Here Speed is less, but no ```0x00``` data comes.
+
