@@ -15,7 +15,8 @@ Max I2C clock frequency = 400KHz
 Default I2C Address is `0x68`.
 
 ### Register map
-![image](https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/9203af55-f1de-4947-aa30-4c3ababc4a6f)
+
+![252996431-9203af55-f1de-4947-aa30-4c3ababc4a6f](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/b091cc82-c9a1-49ba-af48-c165f80afc97)
 
 ```
 Temperature in degrees C = (TEMP_OUT Register Value as a signed quantity)/340 + 36.53     // (Everithing in Decimal value)
