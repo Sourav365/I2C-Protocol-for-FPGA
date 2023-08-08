@@ -29,10 +29,10 @@ Temperature in degrees C = (TEMP_OUT Register Value as a signed quantity)/340 + 
    
 (One clk cycle divided into 20 sub-parts)
 
-![image](https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/ac0ff2fc-2e8a-4df4-acb4-0111f8e99e58)
+<img width="1000" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/ac0ff2fc-2e8a-4df4-acb4-0111f8e99e58">
 
 
-![image](https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/c02f83b8-4d6f-4192-b2cd-60fe52eb5cb9)
+<img width="1000" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/c02f83b8-4d6f-4192-b2cd-60fe52eb5cb9">
 
 
 
