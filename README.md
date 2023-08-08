@@ -102,55 +102,57 @@ graph TD;
                   
 
 ### Using Arduino and MPU6050
-<img width="891" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/99070a12-b64d-46e2-9e14-4d5341c209d2">
 
-<img width="871" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/e4232fde-d296-474f-bef2-31eaadab2876">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/44cdc5db-9cd1-4dd1-8f69-e31bfcabe31b)
 
-<img width="802" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/26c559a7-e129-43e0-a3a6-c8b95b5ab66e">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/d7befd64-cfc7-4192-8de4-3a893bb74791)
 
-
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/a6c8e674-1a95-4d84-b363-07c3313ac291)
 
 
 ### RTL Code Simulation on Viavado
 
-<img width="1000" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/4649b08d-4716-47cc-9d5b-a4ce76a95044">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/6370ec6d-f7f0-4079-860f-44dfa50fa07a)
 
-<img width="900" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/f73901fa-df62-426d-b63c-adcfc7149ee6">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/e021ec10-1b28-4c08-a518-f999a58c206e)
 
-<img width="900" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/db60678e-24c1-43f7-83b1-15912594f73d">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/f793d166-dec6-463a-a8b6-c27d15caa35b)
 
-<img width="900" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/6e88bc4b-3cdf-4053-a723-77a0062edfe5">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/ed1f011e-7e4c-46ac-b72a-2767a844b096)
 
-<img width="900" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/f9c0fe39-7917-4da5-8c3d-9a61aee5a98e">
-
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/8aca82b1-c57b-4099-a66b-97f871cc0b18)
 
 
 ### Using FPGA Board and MPU6050
 
-<img width="904" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/0aef678c-c2ed-4e2a-99f4-79cc35de9ed0">
-<img width="911" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/2006c78d-bee8-4cef-ad36-6e83d17489cb">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/90f35dc6-e2e6-4074-b485-7bcda744e017)
 
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/6bf3aebe-d3c8-4377-9d00-6104eea728b8)
 
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/f8cba8f6-e44a-4bbc-b24d-4fdd7127a6ad)
 
-<img width="903" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/3b7cc8b6-a520-4701-808f-a280d2106185">
-<img width="906" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/843f8799-8ea0-48ed-9b98-4e118709a769">
-<img width="905" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/5f858ffc-95ec-4ee3-99a7-c8bf78bf3c08">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/07d98904-5e0d-4250-8cb0-de575ff6b37d)
 
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/68328620-86ef-49e3-ad70-63a7c34c6728)
 
 **Output of Start1->Send Addr+Wr->Send Internal Reg Addr->Stop->Start2->Send Addr+Rd->Read Data->NAK->Start2**
 
-<img width="906" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/6910702d-bd4f-48ea-b4ec-a80f9feebfb1">
-<img width="899" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/3731cdae-8981-4c44-a32a-2d8006b03182">
-<img width="892" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/7b2caff2-b6d2-40d1-825c-1fe37fe52e88">
-<img width="908" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/60307125-a364-47dd-a9a7-734d5e0f8a79">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/9c8cfced-d332-4a14-b2ac-c378661681ee)
+
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/b5cb9174-b5b1-4629-b8a0-10b221aee32a)
+
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/d6fcea2f-39b6-4427-ad79-1a34136bccf7)
+
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/d8642be1-5547-4ace-93d4-23dfe53a6726)
+
 
 Sometimes it's giving ```0x00``` values. This may be due to Reading data at a very high speed, or the sensor is not able to store its sense data to its internal reg.
 
-<img width="908" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/9979dbbe-4d78-4ef1-8186-02cfbbabaff4">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/40101bcf-8061-4b21-b0ff-55b7d6e1eacf)
 
 **Output of Start1->Send Addr+Wr->Send Internal Reg Addr->Stop->Start2->Send Addr+Rd->Read Data->NAK->Start1**
 
-<img width="896" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/e9ecbebd-4a37-45a5-8cab-537b26e52ea7">
+![image](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/c0052a68-6d25-4b2b-b987-1044a668d644)
 
 Here Speed is less, but no ```0x00``` data comes.
 
