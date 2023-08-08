@@ -15,8 +15,8 @@ Max I2C clock frequency = 400KHz
 Default I2C Address is `0x68`.
 
 ### Register map
+![img1](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/c4c1bd4e-ba65-4b62-894f-d8c13ebc093d)
 
-![252996431-9203af55-f1de-4947-aa30-4c3ababc4a6f](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/27270838-df0f-4975-888f-4adb57cb23f0)
 
 ```
 Temperature in degrees C = (TEMP_OUT Register Value as a signed quantity)/340 + 36.53     // (Everithing in Decimal value)
@@ -30,10 +30,9 @@ Temperature in degrees C = (TEMP_OUT Register Value as a signed quantity)/340 + 
    
 (One clk cycle divided into 20 sub-parts)
 
-<img width="1000" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/ac0ff2fc-2e8a-4df4-acb4-0111f8e99e58">
+![img2](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/8c94de03-3802-4343-b6e8-a13e187bcc3f)
 
-
-<img width="1000" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/c02f83b8-4d6f-4192-b2cd-60fe52eb5cb9">
+![img3](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/c83eaecd-bae0-4582-ba37-07d02b60e0f6)
 
 
 
@@ -77,7 +76,7 @@ When ACK or Data bits come from slave, master releases SDA line means High Imped
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/49667585/237024530-fbdfb100-1f21-448b-810f-94e44d5ae3c3.png">
 
-<img width="902" alt="image" src="https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/f8bccaaa-b0a3-4447-abf2-125e006426a3">
+<img width="902" alt="img13" src="https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/8ecc9c10-28bf-4eed-b470-096b2c0a3945">
 
 
 ## Code 2 (Receive data from internal Reg of Slave)
@@ -85,7 +84,8 @@ When ACK or Data bits come from slave, master releases SDA line means High Imped
 (But in most of the sensor, they use following format)
 Start --> Send Slave Addr --> Send Slave Internal Reg Addr --> Receive Data --> Stop.
 
-![image](https://github.com/Sourav365/I2C-Protocol-On-Basys3/assets/49667585/a84a8405-47d0-4318-ada4-bdd2dc76f4cb)
+![img14](https://github.com/Sourav365/I2C-Protocol-for-FPGA/assets/49667585/8bc5b42b-07b6-4211-a7d4-33e2df91e628)
+
 
 ### States
 ```mermaid
